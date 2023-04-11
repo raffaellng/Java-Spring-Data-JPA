@@ -21,7 +21,7 @@ public class ClienteController {
     private ClienteRepository clienteRepository;
 
     @Autowired
-    private ObjectMapper objectMapper;
+    private ObjectMapper objectMapper; //server para atribuir/setar valores de um lado para o outro
 
     @GetMapping
     public ResponseEntity<List<Cliente>> getAll() {
