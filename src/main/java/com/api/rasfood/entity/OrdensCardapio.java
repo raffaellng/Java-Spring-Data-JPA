@@ -1,6 +1,7 @@
 package com.api.rasfood.entity;
 
 import java.math.BigDecimal;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "ordens_cardapio")

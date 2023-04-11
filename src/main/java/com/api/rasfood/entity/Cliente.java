@@ -1,5 +1,6 @@
 package com.api.rasfood.entity;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -7,10 +8,11 @@ import java.util.List;
 
 @Entity
 @Table(name = "clientes")
+@JsonInclude(JsonInclude.Include.NON_NULL) // So vai trazer aquilo que não e nulo
 public class Cliente {
 
-    @Embedded
-    private ClienteId clienteId;
+    @EmbeddedId
+    private ClienteId clienteId = new ClienteId();
     private String nome;
 
     @Embedded

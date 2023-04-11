@@ -1,5 +1,8 @@
 package com.api.rasfood.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
+
 @Entity
 @Table(name = "enderecos")
 public class Endereco {
@@ -19,6 +22,7 @@ public class Endereco {
     @Column(length = 2)
     private String estado;
 
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     private Cliente cliente;
 
