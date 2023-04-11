@@ -1,5 +1,7 @@
 package com.api.rasfood.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
@@ -8,6 +10,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "cardapio") // nome da tabela
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Cardapio {
 
     @Id
@@ -25,6 +28,7 @@ public class Cardapio {
      * OneToOne
      * */
     @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
     private Categoria categoria;
 
     @Column(name = "data_de_registro")
