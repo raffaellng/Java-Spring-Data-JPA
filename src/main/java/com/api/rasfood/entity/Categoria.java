@@ -1,9 +1,11 @@
 package com.api.rasfood.entity;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "categorias")
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Categoria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
